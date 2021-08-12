@@ -1,0 +1,115 @@
+﻿@model MyFirstProject_C.Models.LoginData
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+}
+</style>
+<body>
+    <div>
+        <h2>Welcome to Login application..</h2>
+        @*<p>
+            <label>Login Ref: <input type="text" name="Login_Ref" /></label>
+        </p>
+        <p>
+            <label>Login Password: <input type="text" name="Login_Password" /></label>
+        </p>
+        <p>
+            <button>Login</button>
+        </p>*@
+        <div class="imgcontainer">
+            <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>
+        <form method="post" action="/Login/Login">
+            <div class="container">
+                <p>
+                    <label>Login Ref: @Html.TextBoxFor(e => e.Login_Ref)</label>
+                </p>
+                <p>
+                    <label>Login Password: @Html.TextBoxFor(e => e.Login_Password)</label>
+                </p>
+                <label style="color:red">@Html.ValidationMessage("InvalidLogin")</label>
+                <p>
+                    <button>Login</button>
+                </p>
+
+                <p>
+
+                    @Html.ActionLink("Click Here", "Index", "Home")
+                </p>
+
+                <p>
+
+                    @Html.ActionLink("Click Here", "login", new { id = 102 })
+                </p>
+                <p>
+
+                    @Html.RouteLink("Click HEre Routlink Demo","Default",new {controller="Home",action="Index",id=123})
+                </p>
+
+
+            </div>
+        </form>
+    </div>
+</body>
+</html>

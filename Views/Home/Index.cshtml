@@ -1,0 +1,41 @@
+﻿@model List<MyFirstProject_C.Models.Employee>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Name</td>
+                    <td>City</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            @foreach (var emp in Model)
+            {
+
+        <tr>
+            <td>@emp.Id</td>
+            <td>@emp.Name</td>
+            <td>@emp.City</td>
+            <td>
+                <a href="/Home/EditEmployee/@emp.Id">Edit</a>
+                <a href="/Home/DeleteEmployee/@emp.Id">Delete</a>
+            </td>
+        </tr>
+        <h4>@TempData["message"]</h4>
+            }
+        </table>
+        </div>
+</body>
+</html>

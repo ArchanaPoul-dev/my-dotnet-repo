@@ -11,7 +11,7 @@ namespace MyFirstProject_C.Models
         public List<Employee> GetEmployees()
         {
             List<Employee> empList = new List<Employee>();
-            //Feature1 Code commited to GIThub
+            //Feature1 Code commited to GIThub---Changes done in github
             SqlConnection sqlcon = new SqlConnection(@"Server=DESKTOP-2HALD25;Database=TestDB;Trusted_Connection=True;MultipleActiveResultSets=True;User Id=sa;Password=W3lc0m3");
             string Query = "Select * from Employee";
 
